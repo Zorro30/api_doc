@@ -1,17 +1,23 @@
 # API reference index
 
-Above are the operation that can be performed.
-     - [Authentication](#authentication) 
-     - [Creating User](#Creating-User) 
-     - [Generating Token](#Generating-Token)
-     - [Promoting User](#Promoting-User)
-     - [Search for a movie](#Search-for-a-movie)
-     - [Add to wishlist](#Add-to-wishlist)
+Below are the operation that can be performed.
+- [Authentication](#authentication) 
+- [Creating User](#Creating-User) 
+- [Generating Token](#Generating-Token)
+- [Promoting User](#Promoting-User)
+- [Search for a movie](#Search-for-a-movie)
+- [Add to wishlist](#Add-to-wishlist)
 
-
+General API endpoints that can be accessed without any authentication.
+|  API                   |  Result                                                      |
+|----------------------  |--------------------------------------------------------------|
+| `GET / HTTP/1.1`       |  Return a list of all the movies in DB                       |
+| `GET /<id>  HTTP/1.1`  |  Return a specific movie object with associated information  |
 
 ## Authentication
-    Example text blah. Example text blah. Example text blah. Example text blah. 
+    There are two levels of access with this api.
+    A user with valid access token can only have access to the account and can exercise features like add to watchlist. An Admin can only create other admin. 
+
 Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. 
@@ -29,8 +35,3 @@ jdcjshj
 kjkj
 
     ## Search for a movie
-
-API Endpoints:
-- `GET / HTTP/1.1`: Return a list of all the movies in DB.
-- `GET /movie/<movie_id> HTTP/1.1`: Return a specific movie object with associated information.
-- `PUT /movies/<imdb> HTTP/1.1`: Update a specific movie object with minimal informations

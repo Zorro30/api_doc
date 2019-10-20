@@ -1,10 +1,10 @@
 # API reference index
      - [Authentication](#Authentication) 
-     - [Creating User](#Creating User) 
-     - [Generating Token](#Generating Token)
-     - [Promoting User]
-     - [Search for a movie]
-     - [Add to wishlist]
+     - [Creating User](#Creating-User) 
+     - [Generating Token](#Generating-Token)
+     - [Promoting User](#Promoting-User)
+     - [Search for a movie](#Search-for-a-movie)
+     - [Add to wishlist](#Add-to-wishlist)
 
 
 
@@ -19,6 +19,14 @@ Example text blah. Example text blah.
 Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. 
+
+    ## Generating Token
+jdcjshj
+
+    ## Promoting-User
+kjkj
+
+    ## Search for a movie
 
 API Endpoints:
 - `GET / HTTP/1.1`: Return a list of all the movies in DB.

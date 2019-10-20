@@ -11,7 +11,7 @@ Below are the operation that can be performed.
 General API endpoints that can be accessed without any authentication.
 
 |  API                   |  Result                                                      |
-|----------------------  |--------------------------------------------------------------|
+|------------------------|--------------------------------------------------------------|
 | `GET / HTTP/1.1`       |  Return a list of all the movies in DB                       |
 | `GET /<id>  HTTP/1.1`  |  Return a specific movie object with associated information  |
 

@@ -24,16 +24,16 @@ Example text blah. Example text blah. Example text blah. Example text blah.
 Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. 
 
-    ## Creating User
+## Creating User
     Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. 
 
-    ## Generating Token
+## Generating Token
 jdcjshj
 
-    ## Promoting-User
+## Promoting-User
 kjkj
 
-    ## Search for a movie
+## Search for a movie

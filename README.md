@@ -6,10 +6,14 @@ Below are the operation that can be performed.
 - [Creating User](#Creating-User) 
 - [Generating Token](#Generating-Token)
 - [Promoting User](#Promoting-User)
+- [Add Movie](#add-movie)
+- [Delete Movie](#delete-movie)
+- [Update Movie](#update-movie)
 - [Search for a movie](#Search-for-a-movie)
 - [Add to wishlist](#Add-to-wishlist)
 - [Remove from wishlist](#remove-from-wishlist)
 - [Get Watchlist](#get-watchlist)
+- [Additional API's](#additional-apis)
 
 ## General API endpoints.
 This can be accessed without any authentication.
@@ -124,6 +128,94 @@ curl -X PUT https://imdb-flaskapi.herokuapp.com/user/<id> -H 'authorization: Bas
 Status: 200 OK
 {
     "message": "The user has been promoted!"
+}
+```
+
+## Add Movie
+This API allows an Admin to add a movie to the database. Only an Admin can access and add movie to the DB.
+
+```bash
+POST /movie
+```
+
+```bash
+curl -X POST https://imdb-flaskapi.herokuapp.com/movie -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 661b2a4b-c5b1-c786-af81-b791c1238f99' -H 'x-access-token: admin-access-token' -d '{
+    "99popularity": 83.0,
+    "director": "Todd Phillips",
+    "genre": [
+      "Psycho"
+    ],
+    "imdb_score": 8.5,
+    "name": "Joker"
+  }'
+```
+
+### Payload
+
+| Parameter               | Description        |
+|-------------------------|--------------------|
+| name                    |name of the movie  |
+| 99popularity            |Popularity of the movie  |
+| director                |Director of the movie  |
+| genre                   |genre of the movie `(array)`  |
+| imdb_score              |IMDB score of the movie  |
+
+
+### Response
+
+```bash
+Status: 200 OK
+{
+    "message": "New movie added!"
+}
+```
+
+## Delete a movie
+This API allows an Admin to delete a movie from the database. Only an Admin can access and add movie to the DB.
+
+```bash
+DELETE /movie/<id>
+```
+
+```bash
+curl -X DELETE https://imdb-flaskapi.herokuapp.com/movie/<id> -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: d0f9619e-2e48-a5c5-6c25-156cf02e3510' -H 'x-access-token: admin-access-token'
+```
+
+`<id>` is the movie_id that the admin wants to delete.
+
+### Response
+```bash
+Status: 200 OK
+{
+    "message": "The movie has been deleted!"
+}
+```
+
+## Update a movie
+This API allows an Admin to update a movie in the database. Only an Admin can access and add movie to the DB.
+
+```bash
+PUT /movie/<id>
+```
+
+```bash
+curl -X PUT https://imdb-flaskapi.herokuapp.com/movie/<id> -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: ad2fbe23-ee9d-81d0-b5ee-96f30a813cfe' -H 'x-access-token: admin-access-token' -d '{
+    "99popularity": 83.0,
+    "director": "Todd Phillips",
+    "genre": [
+      "Psycho"
+    ],
+    "imdb_score": 8.5,
+    "name": "Updated_Movie"
+  }'
+```
+`<id>` is the movie_id that the admin wants to update.
+
+### Response
+```bash
+Status: 200 OK
+{
+    "message": "Movie has been updated!"
 }
 ```
 
@@ -259,6 +351,7 @@ Status: 200 OK
     ]
 }
 ```
+
 
 
 

@@ -35,7 +35,7 @@ POST /create_superuser
 ```
 
 ```bash
-curl -X POST http://127.0.0.1:5000/create_superuser -H 'authorization: Basic Z2F1cmFuZzpnYXVyYW5n' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 6a5bedea-e030-ab64-ae23-8ea1dfaf0b03' -d '{"name":"name","password":"password"}'
+curl -X POST https://imdb-flaskapi.herokuapp.com/create_superuser -H 'authorization: Basic Z2F1cmFuZzpnYXVyYW5n' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 6a5bedea-e030-ab64-ae23-8ea1dfaf0b03' -d '{"name":"name","password":"password"}'
 ```
 ### Payload
 
@@ -54,15 +54,132 @@ Status: 200 OK
 ```
 
 ## Creating User
-    Example text blah. Example text blah. Example text blah. Example text blah. 
-Example text blah. Example text blah. Example text blah. Example text blah. 
-Example text blah. Example text blah. Example text blah. Example text blah. 
-Example text blah. Example text blah. 
+
+This API helps to create User, anyone can create a user with user access to add and remove movies from watch list. And also to search movies across the database.
+
+```bash
+POST /user
+```
+
+```bash
+curl -X POST https://imdb-flaskapi.herokuapp.com/user -H 'authorization: Basic Z2F1cmFuZzpnYXVyYW5n' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 9170dacf-8637-d14d-9f64-748069884be8' -d '{"name":"name",
+ "password":"password"
+}'
+```
+### Payload
+
+| Parameter       | Description        |
+|-----------------|--------------------|
+| name            |Enter the username  |
+| password        |Enter the password  |
+
+### Response
+
+```bash
+Status: 200 OK
+{
+    "message": "New user created with User access, Only Admin can make an Admin!"
+}
+```
 
 ## Generating Token
-jdcjshj
+This API helps in generating a token which is valid for 4 hours for each user and Admin. 
+
+```bash
+GET /login
+```
+
+```bash
+curl -X GET https://imdb-flaskapi.herokuapp.com/login -H 'authorization: Basic Z2F1cmFuZzpnYXVyYW5n' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 68a79d5a-4b58-6566-898f-a6e25faa1043' -d '{"name":"name",
+ "password":"password"
+}'
+```
+
+### Response
+```bash
+Status: 200 OK
+{
+    "token": "sample-token"
+}
+```
 
 ## Promoting-User
-kjkj
+This API helps an admin to promote a user to admin giving him access to add, delete and update movies in Database. Only an admin can access this API.
+
+```bash
+PUT /user/<id>
+```
+
+```bash
+curl -X PUT https://imdb-flaskapi.herokuapp.com/user/<id> -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: c851431c-128b-a97f-8ea8-fd7894a798c7' -H 'x-access-token: admin-access-token' -d '{"name":"admin username",
+ "password":"admin password"
+}'
+```
+`<id>` passed above is the ID of the user, that Admin wants to upgrade.
+
+### Response
+```bash
+Status: 200 OK
+{
+    "message": "The user has been promoted!"
+}
+```
+
 
 ## Search for a movie
+This API helps in searching for a specific movie. It also assists in searching for a movie starting with specific letter and lists down all the movies starting with the letter. This API is accessible to anyone using it.
+
+```bash
+GET /moviesearch/<tag>
+```
+
+```bash
+curl -X GET https://imdb-flaskapi.herokuapp.com/moviesearch/<tag> -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 8a012abb-30f6-86b8-ca70-8c10bc61d2bd' 
+```
+
+### Response
+```bash
+Status: 200 OK
+[
+    {
+        "id": 3,
+        "name": "Cabiria"
+    },
+    {
+        "id": 8,
+        "name": "Casablanca"
+    },
+    {
+        "id": 27,
+        "name": "Rosemarys Baby"
+    },
+    {
+        "id": 98,
+        "name": "Lawrence of Arabia"
+    }
+]
+```
+
+## Add to Wishlist
+This API helps to add and delete movies from wishlist. This API can only be accessed by authenticated users and Admin.
+
+```bash
+POST /watchlist
+```
+
+```bash
+curl -X POST https://imdb-flaskapi.herokuapp.com/watchlist -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: b5f83ec3-14d7-da41-288e-8464901e7eda' -H 'x-access-token: your-access-token' -d '{"movie_id":"1"}'
+```
+### Payload
+
+| Parameter       | Description                         |
+|-----------------|-------------------------------------|
+| movie_id        | id that is accosiated with the movie, which you want to add to watchlist|
+
+```bash
+Status: 200 OK
+{
+    "message": "Movie added to wishlist!"
+}
+```
+

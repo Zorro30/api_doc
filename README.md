@@ -13,7 +13,7 @@ Below are the operation that can be performed.
 - [Add to wishlist](#Add-to-wishlist)
 - [Remove from wishlist](#remove-from-wishlist)
 - [Get Watchlist](#get-watchlist)
-- [Additional API's](#additional-apis)
+- [Additional API](#additional-api)
 
 ## General API endpoints.
 This can be accessed without any authentication.
@@ -98,9 +98,7 @@ GET /login
 ```
 
 ```bash
-curl -X GET https://imdb-flaskapi.herokuapp.com/login -H 'authorization: Basic Z2F1cmFuZzpnYXVyYW5n' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 68a79d5a-4b58-6566-898f-a6e25faa1043' -d '{"name":"name",
- "password":"password"
-}'
+curl -X GET https://imdb-flaskapi.herokuapp.com/login -H 'authorization: Basic Z2F1cmFuZzpnYXVyYW5n' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 68a79d5a-4b58-6566-898f-a6e25faa1043' -d '{"name":"name","password":"password"}'
 ```
 
 ### Response
@@ -354,6 +352,18 @@ Status: 200 OK
 }
 ```
 
+## Additional API
 
+|  API                   |  Result                                                      |
+|------------------------|--------------------------------------------------------------|
+| `GET /user HTTP/1.1`       |  Return a list of all the users in DB(Only accessed by the Admin) |
 
+## Accesing API using Python and Request.
+
+```bash
+import requests
+
+response = requests.get('https://imdb-flaskapi.herokuapp.com/')
+print(response.text)
+```
 

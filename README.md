@@ -18,7 +18,8 @@ This can be accessed without any authentication.
 
 ## Authentication
     There are two levels of access with this api.
-    A user with valid access token can only have access to the account and can exercise features like add to watchlist. An Admin can only create other admin. 
+    A user with valid access token can only have access to the account and can exercise features like 
+    add to watchlist. An Admin can only create other admin. 
 
 Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. Example text blah. Example text blah. 

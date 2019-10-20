@@ -1,14 +1,16 @@
 # API reference index
-     - [Authentication] (#Authentication) 
-     - [Creating User] (#Creating-User) 
-     - [Generating Token] (#Generating-Token)
-     - [Promoting User] (#Promoting-User)
-     - [Search for a movie] (#Search-for-a-movie)
-     - [Add to wishlist] (#Add-to-wishlist)
+
+Above are the operation that can be performed.
+     - [Authentication](#authentication) 
+     - [Creating User](#Creating-User) 
+     - [Generating Token](#Generating-Token)
+     - [Promoting User](#Promoting-User)
+     - [Search for a movie](#Search-for-a-movie)
+     - [Add to wishlist](#Add-to-wishlist)
 
 
 
-    ## Authentication
+## Authentication
     Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. Example text blah. Example text blah. 

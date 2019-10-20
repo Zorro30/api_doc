@@ -8,7 +8,8 @@ Below are the operation that can be performed.
 - [Search for a movie](#Search-for-a-movie)
 - [Add to wishlist](#Add-to-wishlist)
 
-General API endpoints that can be accessed without any authentication.
+## General API endpoints.
+This can be accessed without any authentication.
 
 |  API                   |  Result                                                      |
 |------------------------|--------------------------------------------------------------|

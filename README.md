@@ -17,13 +17,15 @@ This can be accessed without any authentication.
 | `GET /<id>  HTTP/1.1`  |  Return a specific movie object with associated information  |
 
 ## Authentication
-    There are two levels of access with this api.
-    A user with valid access token can only have access to the account and can exercise features like 
-    add to watchlist. An Admin can only create other admin. 
+    - There are two levels of access with this api.
+    - A user with valid access token can only have access to the account and can exercise features like 
+    add to watchlist. An Admin can only create other admin.
+    - An admin with valid token can exercise the features like add, delete and update a particular movie.
+    - Here I have used pyjwt to create tokens that get renewevery 4 hours, hence a user has to generate a token every 4 hours.
 
 Example text blah. Example text blah. Example text blah. Example text blah. 
 Example text blah. Example text blah. Example text blah. Example text blah. 
-Example text blah. Example text blah. 
+Example text blah. Example text blah.
 
 ## Creating User
     Example text blah. Example text blah. Example text blah. Example text blah. 

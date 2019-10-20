@@ -21,7 +21,7 @@ This can be accessed without any authentication.
 |  API                   |  Result                                                      |
 |------------------------|--------------------------------------------------------------|
 | `GET / HTTP/1.1`       |  Return a list of all the movies in DB                       |
-| `GET /<id>  HTTP/1.1`  |  Return a specific movie object with associated information  |
+| `GET /movie/<id>  HTTP/1.1`  |  Return a specific movie object with associated information  |
 
 ## Authentication
     > There are two levels of access with this api.

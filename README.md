@@ -8,6 +8,8 @@ Below are the operation that can be performed.
 - [Promoting User](#Promoting-User)
 - [Search for a movie](#Search-for-a-movie)
 - [Add to wishlist](#Add-to-wishlist)
+- [Remove from wishlist](#remove-from-wishlist)
+- [Get Watchlist](#get-watchlist)
 
 ## General API endpoints.
 This can be accessed without any authentication.
@@ -161,7 +163,7 @@ Status: 200 OK
 ```
 
 ## Add to Wishlist
-This API helps to add and delete movies from wishlist. This API can only be accessed by authenticated users and Admin.
+This API helps to add movies to wishlist. This API can only be accessed by authenticated users and Admin.
 
 ```bash
 POST /watchlist
@@ -176,10 +178,87 @@ curl -X POST https://imdb-flaskapi.herokuapp.com/watchlist -H 'authorization: Ba
 |-----------------|-------------------------------------|
 | movie_id        | id that is accosiated with the movie, which you want to add to watchlist|
 
+
+### Response
 ```bash
 Status: 200 OK
 {
     "message": "Movie added to wishlist!"
 }
 ```
+
+## Remove from Wishlist
+This API helps in removing movie from Wishlist. This API can only be accessed by authenticated users and Admin.
+
+```bash
+DELETE /watchlist/<movie_id>
+```
+
+```bash
+curl -X DELETE https://imdb-flaskapi.herokuapp.com/watchlist/<movie_id> -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: c2fa1f30-d3a7-028d-f15a-5cafbcb96555' -H 'x-access-token: your-access-token' -d '{"movie_id":"1"}'
+```
+
+### Payload
+
+| Parameter       | Description                         |
+|-----------------|-------------------------------------|
+| movie_id        | id that is accosiated with the movie, which you want to delete from watchlist|
+
+
+### Response
+```bash
+Status: 200 OK
+{
+    "message": "Movie removed from watchlist!"
+}
+```
+
+## Get Watchlist
+This API gets all the movies in the watchlist for a particular user.
+
+```bash
+GET /watchlist
+```
+
+```bash
+curl -X GET https://imdb-flaskapi.herokuapp.com/watchlist -H 'authorization: Basic R3A6cGFzc3dvcmQ=' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 0db49245-308f-270a-6fc8-00c2db3d15ee' -H 'x-access-token: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MywiZXhwIjoxNTcxNTkzOTQ4fQ.K_oMvq8gnPUBhRd1jSd7Zy4p2-qVXwfjw_6GtYV0Goc'
+```
+
+### Response
+```bash
+Status: 200 OK
+{
+    "message": [
+        {
+            "99popularity": 83,
+            "director": "Victor Fleming",
+            "genre": [
+                "Adventure",
+                " Family",
+                " Fantasy",
+                " Musical"
+            ],
+            "id": 1,
+            "imdb_score": 8.3,
+            "name": "The Wizard of Oz"
+        },
+        {
+            "99popularity": 85,
+            "director": "David Lean",
+            "genre": [
+                "Adventure",
+                " Biography",
+                " Drama",
+                " History",
+                " War"
+            ],
+            "id": 98,
+            "imdb_score": 8.5,
+            "name": "Lawrence of Arabia"
+        }
+    ]
+}
+'''
+
+
 

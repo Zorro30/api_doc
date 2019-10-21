@@ -48,5 +48,7 @@ Scaling the application 5X.
       This can be mitigated by adding a standby Load balancer. But, yes that comes with more cost.
     - And also, Horizontal scaling comes with an additional cost therefore it's going be heavy on our pockets.
 
-Below is an architecture in a Nutshell which can be used to handle.
+
+Here is my suggestion of architecture in a Nutshell which can be used to handle the queries efficiently.
+
 ![Architecture](architecture.png)

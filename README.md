@@ -5,7 +5,7 @@ Below are the operation that can be performed.
 - [Creating Admin](#creating-admin)
 - [Creating User](#Creating-User) 
 - [Generating Token](#Generating-Token)
-- [Promoting User](#Promoting-User)
+- [Promoting User to Admin](#Promoting-User)
 - [Add Movie](#add-movie)
 - [Delete Movie](#delete-movie)
 - [Update Movie](#update-movie)
@@ -109,7 +109,7 @@ Status: 200 OK
 }
 ```
 
-## Promoting-User
+## Promoting User to Admin
 This API helps an admin to promote a user to admin giving him access to add, delete and update movies in Database. Only an admin can access this API.
 
 ```bash
@@ -366,4 +366,3 @@ import requests
 response = requests.get('https://imdb-flaskapi.herokuapp.com/')
 print(response.text)
 ```
-

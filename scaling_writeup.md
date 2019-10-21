@@ -10,10 +10,10 @@ Scaling the application 5X.
       save a lot of reponse time.
     - Can switch to a NO-SQL DB, which can enable faster access of the data.
     - Try and avoid computation on the server side.
-    - And can also reduce the reponse time by enabling the HTTP cache on the browser side.
+    - And can also reduce the reponse time by enabling the HTTP cache on the browser side, hence avoid regenerating answers the browser already know.
 
     > Bottlenecks:
-    - One server how much ever optimized cannot take the ever increasing requests.
+    - One server how much ever optimized cannot take the load taken by a distributed set of servers.
     - Also there's a limit to increase the resource of the server.
 
 2) Next comes Vertical scaling.
@@ -29,6 +29,7 @@ Scaling the application 5X.
 3) Horizontal scaling.
 
     >To Do's:
+    - The goal of scaling is to make our web app do less work for the most common requests.
     - To avoid single point of failure we can have multiple servers that can serve the requests of the users.
     - Adding load balancer with round robin or randmoness to avoid load on a single server.
     - DB sharding and partioning and indexing can play a significant role in reducing the response time.
@@ -47,10 +48,5 @@ Scaling the application 5X.
       This can be mitigated by adding a standby Load balancer. But, yes that comes with more cost.
     - And also, Horizontal scaling comes with an additional cost therefore it's going be heavy on our pockets.
 
-    
-    
-    
-    
-
-
-
+Below is an architecture in a Nutshell which can be used to handle.
+![Architecture](architecture.png)

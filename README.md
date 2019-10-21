@@ -70,9 +70,7 @@ POST /user
 ```
 
 ```bash
-curl -X POST https://imdb-flaskapi.herokuapp.com/user -H 'authorization: Basic Z2F1cmFuZzpnYXVyYW5n' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 9170dacf-8637-d14d-9f64-748069884be8' -d '{"name":"name",
- "password":"password"
-}'
+curl -X POST https://imdb-flaskapi.herokuapp.com/user -H 'authorization: Basic Z2F1cmFuZzpnYXVyYW5n' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 9170dacf-8637-d14d-9f64-748069884be8' -d '{"name":"name","password":"password"}'
 ```
 ### Payload
 
@@ -117,9 +115,7 @@ PUT /user/<id>
 ```
 
 ```bash
-curl -X PUT https://imdb-flaskapi.herokuapp.com/user/<id> -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: c851431c-128b-a97f-8ea8-fd7894a798c7' -H 'x-access-token: admin-access-token' -d '{"name":"admin username",
- "password":"admin password"
-}'
+curl -X PUT https://imdb-flaskapi.herokuapp.com/user/<id> -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: c851431c-128b-a97f-8ea8-fd7894a798c7' -H 'x-access-token: admin-access-token' -d '{"name":"admin username","password":"admin password"}'
 ```
 `<id>` passed above is the ID of the user, that Admin wants to upgrade.
 
@@ -139,15 +135,7 @@ POST /movie
 ```
 
 ```bash
-curl -X POST https://imdb-flaskapi.herokuapp.com/movie -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 661b2a4b-c5b1-c786-af81-b791c1238f99' -H 'x-access-token: admin-access-token' -d '{
-    "99popularity": 83.0,
-    "director": "Todd Phillips",
-    "genre": [
-      "Psycho"
-    ],
-    "imdb_score": 8.5,
-    "name": "Joker"
-  }'
+curl -X POST https://imdb-flaskapi.herokuapp.com/movie -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: 661b2a4b-c5b1-c786-af81-b791c1238f99' -H 'x-access-token: admin-access-token' -d '{"99popularity": 83.0,"director": "Todd Phillips","genre": ["Psycho"],"imdb_score": 8.5,"name":"Joker"}'
 ```
 
 ### Payload
@@ -199,15 +187,7 @@ PUT /movie/<id>
 ```
 
 ```bash
-curl -X PUT https://imdb-flaskapi.herokuapp.com/movie/<id> -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: ad2fbe23-ee9d-81d0-b5ee-96f30a813cfe' -H 'x-access-token: admin-access-token' -d '{
-    "99popularity": 83.0,
-    "director": "Todd Phillips",
-    "genre": [
-      "Psycho"
-    ],
-    "imdb_score": 8.5,
-    "name": "Updated_Movie"
-  }'
+curl -X PUT https://imdb-flaskapi.herokuapp.com/movie/<id> -H 'authorization: Basic R2F1cmFuZzpwYXNzd29yZA==' -H 'cache-control: no-cache' -H 'content-type: application/json' -H 'postman-token: ad2fbe23-ee9d-81d0-b5ee-96f30a813cfe' -H 'x-access-token: admin-access-token' -d '{"99popularity": 83.0,"director": "Todd Phillips","genre": ["Psycho"],"imdb_score": 8.5,"name": "Updated_Movie"}'
 ```
 `<id>` is the movie_id that the admin wants to update.
 
